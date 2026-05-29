@@ -5,8 +5,8 @@ from routers import stores, mealplan
 load_dotenv()
 app = FastAPI(title="Meal Planner API")
 
-# app.include_router(stores.router, prefix="/stores", tags=["stores"])
-# app.include_router(mealplan.router, prefix="/mealplan", tags=["mealplan"])
+app.include_router(stores.router, prefix="/stores", tags=["stores"])
+app.include_router(mealplan.router, prefix="/mealplan", tags=["mealplan"])
 
 @app.get("/health")
 def health():
